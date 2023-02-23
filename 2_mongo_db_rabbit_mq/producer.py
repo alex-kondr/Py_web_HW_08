@@ -9,7 +9,6 @@ from models import User
 
 faker = Faker()
 
-
 credentials = pika.PlainCredentials("guest", "guest")
 parameters = pika.ConnectionParameters("localhost", 5672, "/", credentials)
 connection = pika.BlockingConnection(parameters)

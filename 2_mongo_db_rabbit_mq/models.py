@@ -3,6 +3,7 @@ from mongoengine.fields import BooleanField, StringField
 
 
 class User(Document):
+    
     fullname = StringField()
     phone_number = StringField()
     email = StringField()
