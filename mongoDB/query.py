@@ -16,6 +16,9 @@ def handler(command):
             
             case "tags":
                 return get_quotes_by_tags(value)
+            
+            case "test":
+                return regex_test(value)
                 
             case _:
                 return "No such this command"
@@ -32,28 +35,39 @@ def handler(command):
         
     except ValueError as err:
         print(err)
-        
+
+
+def quotes_obj_to_list(quotes):
+    return [quote.quote for quote in quotes]
+
         
 def get_quotes_by_author(name: str) -> list[str]:
     
-    author = Author.objects(fullname=name).first()
+    author = Author.objects(fullname={"$regex": "^"+name, "$options": "i"}).first()
     quotes = Quote.objects(author=author)
     
-    return [quote.quote for quote in quotes]
+    return quotes_obj_to_list(quotes)
 
 
 def get_quotes_by_tag(tag: str) -> list[str]:
     
-    quotes = Quote.objects(tags=tag)
+    quotes = Quote.objects(tags={"$regex": "^"+tag, "$options": "i"})
     
-    return [quote.quote for quote in quotes]
+    return quotes_obj_to_list(quotes)
 
 
 def get_quotes_by_tags(tags: str) -> list[str]:
     
     quotes = Quote.objects(tags__in=[tag for tag in tags.split(",")])
     
-    return [quote.quote for quote in quotes]
+    return quotes_obj_to_list(quotes)
+
+
+def regex_test(value):
+    
+    quotes = Author.objects(fullname={"$regex": value, "$options": "i"}).first()
+    
+    return [quote.fullname for quote in quotes]
 
 
 if __name__ == "__main__":
