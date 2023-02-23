@@ -5,17 +5,30 @@ from models import Author, Quote
 def handler(command):
 
     try:
-        key, value = command.split(": ")    
+        key, value = command.split(": ")
+        
+        match key:
+            case "name":
+                return get_quotes_by_author(value)
+            
+            case "tag":
+                return get_quotes_by_tag(value)
+            
+            case "tags":
+                return get_quotes_by_tags(value)
                 
-        commands = {
-            "name": get_quotes_by_author,
-            "tag": get_quotes_by_tag,
-            "tags": get_quotes_by_tags
-        }
+            case _:
+                return "No such this command"
+                
+        # commands = {
+        #     "name": get_quotes_by_author,
+        #     "tag": get_quotes_by_tag,
+        #     "tags": get_quotes_by_tags
+        # }
         
-        result = commands[key](value)
+        # result = commands[key](value)
         
-        return result
+        # return result
         
     except ValueError as err:
         print(err)
