@@ -34,6 +34,21 @@ trio = ["trio (>=0.14,<0.23)"]
 wmi = ["wmi (>=1.5.1,<2.0.0)"]
 
 [[package]]
+name = "faker"
+version = "17.0.0"
+description = "Faker is a Python package that generates fake data for you."
+category = "main"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "Faker-17.0.0-py3-none-any.whl", hash = "sha256:21c3c6c45183308151c14f62afe59bf54ace68f663e0180973698ba2a9a3b2c4"},
+    {file = "Faker-17.0.0.tar.gz", hash = "sha256:17cf85aeb0363a3384ccd4c1f52b52ec8f414c7afaab74ae1f4c3e09a06e14de"},
+]
+
+[package.dependencies]
+python-dateutil = ">=2.4"
+
+[[package]]
 name = "mongoengine"
 version = "0.26.0"
 description = "MongoEngine is a Python Object-Document Mapper for working with MongoDB."
@@ -224,4 +239,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "1c753ba44e6f3139bbf5b9cc472ab9f7c735a4e483e600ec2245e235583fd6ac"
+content-hash = "7466fce5bdb72e04cee2eba440a2531d54510218982ba931c97ab1a77072f174"
