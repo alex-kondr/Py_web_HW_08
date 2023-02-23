@@ -195,6 +195,21 @@ hiredis = ["hiredis (>=1.0.0)"]
 ocsp = ["cryptography (>=36.0.1)", "pyopenssl (==20.0.1)", "requests (>=2.26.0)"]
 
 [[package]]
+name = "redis-lru"
+version = "0.1.2"
+description = "LRU cache for Python. Use Redis as backend. Provides a dictionary-like object as well as a method decorator."
+category = "main"
+optional = false
+python-versions = ">=3.4"
+files = [
+    {file = "redis-lru-0.1.2.tar.gz", hash = "sha256:01a648cb42d8efdb9472c5c42980da3dad4be4b6d45f2d9811ff6f69bcbfb164"},
+    {file = "redis_lru-0.1.2-py2.py3-none-any.whl", hash = "sha256:e6c2f56b43900b5a8f741d1db44bdcf423f228d6f3665f48a9ec6321c5579d0a"},
+]
+
+[package.dependencies]
+redis = "*"
+
+[[package]]
 name = "six"
 version = "1.16.0"
 description = "Python 2 and 3 compatibility utilities"
@@ -209,4 +224,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "03b20d4c5542d3c1302e2928228c45590b5df8972513b975b01b36035aeeb538"
+content-hash = "1c753ba44e6f3139bbf5b9cc472ab9f7c735a4e483e600ec2245e235583fd6ac"

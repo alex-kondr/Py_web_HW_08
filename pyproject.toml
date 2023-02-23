@@ -14,6 +14,7 @@ pymongo = "^4.3.3"
 redis = "^4.5.1"
 mongoengine = "^0.26.0"
 python-dateutil = "^2.8.2"
+redis-lru = "^0.1.2"
 
 
 [build-system]
